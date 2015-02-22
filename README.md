@@ -1,14 +1,25 @@
 # External links
 
-[![Build Status](https://travis-ci.org/silverstripe-labs/silverstripe-externallinks.svg?branch=master)](https://travis-ci.org/silverstripe-labs/silverstripe-externallinks)
-
 ## Introduction
 
-The external links module is a task and ModelAdmin to track and to report on broken external links.
+### Core module
+
+The external links module is a task and ModelAdmin to track and to report on broken external links. It is maintained 
+by Kirk Mayo at Silverstripe.
+
+### This fork
+
+This is a fork which removes a core piece of the module's functionality. With this fork installed, the module will no 
+longer write the `ss-broken` css class to broken URLs. The reason for this change is that saving the modified record
+to the database changes the publication date of versioned content, pushing it back to the top of RSS feeds and Recently
+Edited Pages.
+
+Apart from the *Maintainer contact* in the next section, the remainder of this README is the original document by Kirk
+Mayo.
 
 ## Maintainer Contact
 
-	* Kirk Mayo kirk (at) silverstripe (dot) com
+	* Leigh Harrison: leigh (dot) harrison (at) dia (dot) govt (dot) nz
 
 ## Requirements
 
