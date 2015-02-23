@@ -118,7 +118,9 @@ class CheckExternalLinksTask extends BuildTask {
 	 * @return BrokenExternalPageTrackStatus
 	 */
 	public function runLinksCheck($limit = null) {
-		// Check the current status
+        // Should we update broken links in the database?
+        $addClass = Config::inst()->get('ExternalLinks', 'externallinksAddClass');
+            // Check the current status
 		$status = BrokenExternalPageTrackStatus::get_or_create();
 
 		// Calculate pages to run
@@ -143,10 +145,12 @@ class CheckExternalLinksTask extends BuildTask {
 				$this->checkPageLink($pageTrack, $link);
 			}
 
-			// Update content of page based on link fixes / breakages
-			$htmlValue->saveHTML();
-			$page->Content = $htmlValue->getContent();
-			$page->write();
+			// If configured to do so, update content of page based on link fixes / breakages
+            if ($addClass) {
+                $htmlValue->saveHTML();
+                $page->Content = $htmlValue->getContent();
+                $page->write();
+            }
 
 			// Once all links have been created for this page update HasBrokenLinks
 			$count = $pageTrack->BrokenLinks()->count();

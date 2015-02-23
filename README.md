@@ -14,6 +14,8 @@ longer write the `ss-broken` css class to broken URLs. The reason for this chang
 to the database changes the publication date of versioned content, pushing it back to the top of RSS feeds and Recently
 Edited Pages.
 
+The new `config.yml` file contains a boolean value that can be used to turn the "add class" functionality on and off.
+
 Apart from the *Maintainer contact* in the next section, the remainder of this README is the original document by Kirk
 Mayo.
 
