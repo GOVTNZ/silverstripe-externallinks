@@ -1,13 +1,13 @@
 {
-	"name": "silverstripe/externallinks",
-	"description": "Adds tracking of external broken links to the SilverStripe CMS",
+	"name": "govtnz/silverstripe-externallinks",
+	"description": "Adds tracking of external broken links to the SilverStripe CMS without revising content in the database",
 	"type": "silverstripe-module",
 	"keywords": ["silverstripe", "broken", "links", "href"],
 	"license": "BSD-3-Clause",
 	"authors": [
 		{
-			"name": "Kirk Mayo",
-			"email": "kirk@silverstripe.com"
+			"name": "Leigh Harrison",
+			"email": "leigh.harrison@dia.govt.nz"
 		}
 	],
 	"require": {
@@ -19,6 +19,6 @@
 		"phpunit/PHPUnit": "~3.7@stable"
 	},
 	"suggest": {
-		"silverstripe/queuedjobs": "Speeds up running the job for Content Editors fropm the report"
+		"silverstripe/queuedjobs": "Speeds up running the job for Content Editors from the report"
 	}
 }
