@@ -1,4 +1,4 @@
--ext    <?php
+<?php
 
 class CheckExternalLinksTask extends BuildTask {
 
