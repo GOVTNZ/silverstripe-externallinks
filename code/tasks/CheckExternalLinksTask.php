@@ -1,4 +1,4 @@
-<?php
+-ext    <?php
 
 class CheckExternalLinksTask extends BuildTask {
 
@@ -135,7 +135,7 @@ class CheckExternalLinksTask extends BuildTask {
 
 			// Check value of html area
 			$page = $pageTrack->Page();
-			$this->log("Checking {$page->Title}");
+			//$this->log("Checking {$page->Title}");
 			$htmlValue = Injector::inst()->create('HTMLValue', $page->Content);
 			if (!$htmlValue->isValid()) continue;
 
@@ -154,7 +154,7 @@ class CheckExternalLinksTask extends BuildTask {
 
 			// Once all links have been created for this page update HasBrokenLinks
 			$count = $pageTrack->BrokenLinks()->count();
-			$this->log("Found {$count} broken links");
+			$this->log("{$page->Title} broken links: {$count}");
 			if($count) {
 				// Bypass the ORM as syncLinkTracking does not allow you to update HasBrokenLink to true
 				DB::query(sprintf(
